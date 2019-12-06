@@ -1,6 +1,12 @@
 Identifier Tools
 ################
 
+.. image:: https://gitlab.ore.nbs.sk/ore/identifier-tools/badges/master/pipeline.svg
+  :alt: pipeline status
+
+.. image:: https://gitlab.ore.nbs.sk/ore/identifier-tools/badges/master/coverage.svg
+  :alt: coverage report
+
 Library that helps working with different subject identifier types. Purpose of this library is to validate string
 if it matches the identifier format and if possible calculate checksum if it is correct for identifier.
 
@@ -24,8 +30,9 @@ Install the released version::
 
     pip install identifier-tools
 
-Alternatively you can install the package latest development version from the git repository.
+Alternatively you can install the package latest development version from the git repository::
 
+    pip install https://gitlab.ore.nbs.sk/ore/identifier-tools/-/archive/master/identifier-tools-master.zip --trusted-host gitlab.ore.nbs.sk
 
 Development
 -----------

@@ -1,0 +1,128 @@
+# Jobs are used to create builds, which are then picked up by Runners and 
+# executed within the environment of the Runner. What is important, is that 
+# each job is run independently from each other.
+image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.8.0-oracle12.2
+
+# First all jobs of build are executed in parallel.
+# If all jobs of build succeed, the test jobs are executed in parallel.
+# If all jobs of test succeed, the deploy jobs are executed in parallel.
+# If all jobs of deploy succeed, the commit is marked as success.
+# If any of the previous jobs fails, the commit is marked as failed and no jobs of further stage are executed.
+stages:
+  - install
+  - security
+  - test
+  - standards
+
+variables:
+ GIT_SSL_NO_VERIFY: "true"
+ ## helper variables to enable verbose output for debugging purposes
+ #GIT_CURL_VERBOSE: "1"
+ #GIT_DEBUG_LOOKUP: "1"
+ #GIT_TRANSLOOP_DEBUG: "1"
+ #GIT_TRANSPORT_HELPER_DEBUG: "1"
+
+## runs everytime before any job is executed
+before_script:
+   - echo "---------> Set required system variables"
+   - export http_proxy=http://proxy.nbs.sk:3128
+   - export https_proxy=http://proxy.nbs.sk:3128
+
+## JOBS
+Package_installation:3.8:
+  stage: install
+  script:
+   - echo "---------> Install Package"
+   - python --version
+   - python setup.py install
+  when: on_success
+
+#Package_installation:3.7:
+#  stage: install
+#  image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.7.5-oracle12.2
+#  script:
+#   - echo "---------> Install Package"
+#   - python --version
+#   - python setup.py install
+#   when: on_success
+#
+#Package_installation:3.6:
+#  stage: install
+#  image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.6-oracle12.2
+#  script:
+#   - echo "---------> Install Package"
+#   - python --version
+#   - python setup.py install
+#   when: on_success
+
+Dlint_code_analysis:
+  stage: security
+  before_script:
+   - echo "---------> Install dlint"
+   - pip install dlint --quiet
+  script:
+   - echo "---------> Run Security Static Code Analysis"
+   - flake8 --select=DUO setup.py identifier_tools
+  when: on_success
+
+Bandit_code_analysis:
+  stage: security
+  before_script:
+   - echo "---------> Install Bandit"
+   - pip install bandit --quiet
+  script:
+   - echo "---------> Run Security Static Code Analysis"
+   - bandit -r identifier_tools -x identifier_tools/tests 
+  when: on_success
+
+PEP8_code_standards:
+  stage: standards
+  script:
+   - echo "---------> Install Flake8"
+   - pip install flake8 --quiet
+   - echo "---------> Run Code Standards Analysis"
+   - flake8 setup.py identifier_tools
+  when: on_success
+
+Code_Complexity:
+   stage: standards
+   script:
+    - echo "---------> Install Radon"
+    - pip install radon --quiet
+    - echo "---------> Compute Maintainability Index"
+    - radon mi identifier_tools -i tests
+    - echo "---------> Compute Cyclomatic Complexity"
+    - radon cc identifier_tools -a -i tests
+   when: on_success
+
+Test_code_Python:3.8:
+  stage: test
+  script:
+   - python --version
+   - echo "---------> Install pytest and coverage"
+   - pip install pytest pytest-cov --quiet
+   - echo "---------> Run tests and get coverage"
+   - pytest --cov identifier_tools
+  when: on_success
+
+Test_code_Python:3.7:
+  stage: test
+  image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.7.5-oracle12.2
+  script:
+   - python --version
+   - echo "---------> Install pytest"
+   - pip install pytest --quiet
+   - echo "---------> Run tests"
+   - pytest identifier_tools
+  when: on_success
+
+Test_code_Python:3.6:
+  stage: test
+  image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.6-oracle12.2
+  script:
+   - python --version
+   - echo "---------> Install pytest"
+   - pip install pytest --quiet
+   - echo "---------> Run tests"
+   - pytest identifier_tools
+  when: on_success
