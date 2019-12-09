@@ -65,7 +65,6 @@ ECB_NATIONAL_IDENTIFIERS = {
     "IE_GOV_CD": "^(GV[0-9]{4}|LA[0-9]{3})$",
     "IN_CIN_CD": "^[A-Z0-9]{21}$",
     "IN_PAN_CD": "^[A-Z0-9]{10}$",
-    "IT_ABI_CD": "^[^+,]{1,50}$",
     "IT_CCIAA_CD": "^[A-Z]{2}[0-9]{7}$",
     "IT_CF_CD": "^[0-9]{11}$",
     "IT_UCITS_CD": "^[0-9]{1,7}$",
