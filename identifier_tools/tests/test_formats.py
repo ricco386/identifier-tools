@@ -46,8 +46,9 @@ def test_known_type_identifier_length():
 def test_verify_identifier_formats():
     # Samples from European Central Bank spreadsheet
     assert verify_identifier_format(identifier="7934858", identifier_type="AT_IDENT_CD") is True
+    assert verify_identifier_format(identifier="79063w", identifier_type="AT_FB_CD") is True
+    assert verify_identifier_format(identifier="79063w3", identifier_type="AT_FB_CD") is True
     assert verify_identifier_format(identifier="119982w", identifier_type="AT_FB_CD") is True
-    assert verify_identifier_format(identifier="78633m13", identifier_type="AT_FB_CD") is True
     assert verify_identifier_format(identifier="881400879", identifier_type="AT_ZVR_CD") is True
     assert verify_identifier_format(identifier="40801", identifier_type="AT_GEM_CD") is True
     assert verify_identifier_format(identifier="4", identifier_type="AT_LAE_CD") is True
@@ -77,6 +78,7 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier="90091883", identifier_type="CZ_NID_CD") is True
     assert verify_identifier_format(identifier="8080107948", identifier_type="CZ_NID_CD") is True
     assert verify_identifier_format(identifier="22756214", identifier_type="DK_CVR_CD") is True
+    assert verify_identifier_format(identifier="3000-01", identifier_type="DK_FT_CD") is True
     assert verify_identifier_format(identifier="3000", identifier_type="DK_FT_CD") is True
     assert verify_identifier_format(identifier="12345-678", identifier_type="DK_FT_CD") is True
     assert verify_identifier_format(identifier="3000-0123", identifier_type="DK_FT_CD") is True
@@ -123,7 +125,7 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier="LVAF211B02", identifier_type="LV_FON_CD") is True
     assert verify_identifier_format(identifier="LV44103104436", identifier_type="LV_FON_CD") is True
     assert verify_identifier_format(identifier="LV40203123846", identifier_type="LV_FON_CD") is True
-    assert verify_identifier_format(identifier="LVLB001007", identifier_type="LV_FON_CD") is True
+    assert verify_identifier_format(identifier="LVB001007", identifier_type="LV_FON_CD") is True
     assert verify_identifier_format(identifier="LVVF098010", identifier_type="LV_FON_CD") is True
     assert verify_identifier_format(identifier="110486217", identifier_type="LT_JAR_CD") is True
     assert verify_identifier_format(identifier="F001", identifier_type="LT_INV_CD") is True
