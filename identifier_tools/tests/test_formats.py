@@ -81,7 +81,8 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier="3000-01", identifier_type="DK_FT_CD") is True
     assert verify_identifier_format(identifier="3000", identifier_type="DK_FT_CD") is True
     assert verify_identifier_format(identifier="12345-678", identifier_type="DK_FT_CD") is True
-    assert verify_identifier_format(identifier="3000-0123", identifier_type="DK_FT_CD") is True
+    assert verify_identifier_format(identifier="3-123", identifier_type="DK_FT_CD") is True
+    assert verify_identifier_format(identifier="3", identifier_type="DK_FT_CD") is True
     assert verify_identifier_format(identifier="22756214", identifier_type="DK_SE_CD") is True
     assert verify_identifier_format(identifier="10005211", identifier_type="EE_RG_CD") is True
     assert verify_identifier_format(identifier="21", identifier_type="EE_FON_CD") is True
