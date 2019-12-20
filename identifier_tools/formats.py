@@ -119,6 +119,8 @@ NBS_IDENTIFIERS = {
 
 IDENTIFIER_FORMATS = {**ECB_NATIONAL_IDENTIFIERS, **NBS_IDENTIFIERS}
 
+GEN_IDENTIFIER_COUNTRY_EXCEPTIONS = ("BR", "CA", "CH", "CN", "GB", "HK", "IN", "JP", "MX", "RU", "TR", "US")
+
 
 def verify_identifier_format(identifier: str, identifier_type: str, allow_unknown_type: bool = True) -> bool:
     """
@@ -134,3 +136,25 @@ def verify_identifier_format(identifier: str, identifier_type: str, allow_unknow
         result = False
 
     return result
+
+
+def verify_national_identifier_country(country_code: str, national_id_type: str) -> bool:
+    """
+    Checks if the national identifier type belongs to the specified country.
+
+    :param country_code: String, containing ISO2 format country code.
+    :param national_id_type: String, containing national identifier type.
+    :return:
+        True if identifier type belongs to the country.
+        False if identifier type DOESN'T belong to the country.
+    """
+    country_national_codes = [x for x in IDENTIFIER_FORMATS if x.startswith(country_code)]
+
+    if national_id_type.startswith(country_code) \
+            or national_id_type == "BIC" \
+            or (
+                national_id_type.startswith("GEN") and len(country_national_codes) == 0 or country_code
+                in GEN_IDENTIFIER_COUNTRY_EXCEPTIONS):
+        return True
+    else:
+        return False

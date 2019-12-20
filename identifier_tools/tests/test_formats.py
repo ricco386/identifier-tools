@@ -1,4 +1,4 @@
-from identifier_tools.formats import verify_identifier_format, IDENTIFIER_FORMATS
+from identifier_tools.formats import verify_identifier_format, IDENTIFIER_FORMATS, verify_national_identifier_country
 from .utils import BadCodeType
 
 
@@ -222,3 +222,15 @@ def test_invalid_identifier_formats():
     assert verify_identifier_format(identifier="31364501a", identifier_type="SK_ICO_CD") is False
     assert verify_identifier_format(identifier="551521-5795", identifier_type="SE_ORG_CD") is False
     assert verify_identifier_format(identifier="5505215795", identifier_type="SE_ORG_CD") is False
+
+
+def test_verify_national_identifier_country_true():
+    assert verify_national_identifier_country(country_code="CZ", national_id_type="CZ_ICO_CD") is True
+    assert verify_national_identifier_country(country_code="ZZ", national_id_type="BIC") is True
+    assert verify_national_identifier_country(country_code="GB", national_id_type="NON_EXISTING_TYPE") is True
+    assert verify_national_identifier_country(country_code="ZZ", national_id_type="GEN_OTHER_CD") is True
+
+
+def test_verify_national_identifier_country_false():
+    assert verify_national_identifier_country(country_code="SK", national_id_type="CZ_ICO_CD") is False
+    assert verify_national_identifier_country(country_code="ZZ", national_id_type="NON_EXISTING_TYPE") is False
