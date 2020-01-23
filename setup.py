@@ -23,7 +23,7 @@ CLASSIFIERS = [
 
 
 def read_file(name):
-    return open(os.path.join(os.path.dirname(__file__), name)).read()
+    return open(os.path.join(os.path.dirname(__file__), name), encoding="utf-8").read()
 
 
 setup(
