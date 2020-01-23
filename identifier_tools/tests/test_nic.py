@@ -1,4 +1,5 @@
-from identifier_tools.nic import verify_nic_checksum
+from identifier_tools.nic import verify_nic_checksum, verify_nic_sequence_checksum
+from identifier_tools.iso import calculate_iso7064_checksum
 from .utils import BadCodeType
 
 
@@ -43,6 +44,17 @@ def test_invalid_nic_format_first_part_not_numeric():
     assert verify_nic_checksum(nic) is False
 
 
+def test_invalid_nic_format_first_part_is_not_date():
+    nic = '20171505N000120'
+    assert verify_nic_checksum(nic) is False
+
+    nic = '20170135N000120'
+    assert verify_nic_checksum(nic) is False
+
+    nic = '00010105N000120'
+    assert verify_nic_checksum(nic) is False
+
+
 def test_invalid_nic_format_second_part_not_numeric():
     nic = '20170105NA00120'
     assert verify_nic_checksum(nic) is False
@@ -70,14 +82,14 @@ def test_invalid_nic_format_checksum_not_numeric():
     assert verify_nic_checksum(nic) is False
 
 
-def test_invalid_nic_format_first_part_is_not_date():
-    nic = '20171505N000120'
+def test_invalid_nic_format_checksum_not_match():
+    nic = "20170401N000701"
     assert verify_nic_checksum(nic) is False
 
-    nic = '20170135N000120'
+    nic = "19991011N004700"
     assert verify_nic_checksum(nic) is False
 
-    nic = '00010105N000120'
+    nic = "20170105N000199"
     assert verify_nic_checksum(nic) is False
 
 
@@ -107,6 +119,23 @@ def test_valid_nic():
 
     nic = "20170105N000120"
     assert verify_nic_checksum(nic) is True
+
+
+def test_verify_nic_sequence_checksum():
+    assert verify_nic_sequence_checksum(sequence='20170401N0007', checksum='82') is True
+    assert verify_nic_sequence_checksum(sequence='20170401N0007', checksum='07') is False
+
+    assert verify_nic_sequence_checksum(sequence='19991011N0047', checksum='49') is True
+    assert verify_nic_sequence_checksum(sequence='19991011N0047', checksum='00') is False
+
+    assert verify_nic_sequence_checksum(sequence='20170105N0001', checksum='20') is True
+    assert verify_nic_sequence_checksum(sequence='20170105N0001', checksum='99') is False
+
+
+def test_nic_assigned_number_checksum():
+    assert calculate_iso7064_checksum(code='20170401N0007') == '82'
+    assert calculate_iso7064_checksum(code='19991011N0047') == '49'
+    assert calculate_iso7064_checksum(code='20170105N0001') == '20'
 
 
 def test_output_type_for_verify_nic_checksum():

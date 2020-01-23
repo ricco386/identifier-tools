@@ -1,6 +1,18 @@
 import datetime
-from .iso import verify_iso7064_code
+from .iso import verify_iso7064_code, calculate_iso7064_checksum
 from .formats import verify_identifier_format
+
+
+def verify_nic_sequence_checksum(sequence: str, checksum: str) -> bool:
+    """
+    Verify the validity of NIČ sequence checksum
+
+    NIČ is unique identifier issued in sequence and each sequence has its own checksum.
+    """
+    if calculate_iso7064_checksum(code=sequence) != checksum:
+        return False
+
+    return True
 
 
 def verify_nic_checksum(nic: str) -> bool:
@@ -23,6 +35,9 @@ def verify_nic_checksum(nic: str) -> bool:
     try:
         datetime.date(year=int(nic[:4]), month=int(nic[4:6]), day=int(nic[6:8]))
     except ValueError:
+        return False
+
+    if not verify_nic_sequence_checksum(sequence=nic[0:13], checksum=nic[13:15]):
         return False
 
     return verify_iso7064_code(nic)
