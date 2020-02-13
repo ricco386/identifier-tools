@@ -1,4 +1,5 @@
-from identifier_tools.formats import verify_identifier_format, IDENTIFIER_FORMATS, verify_national_identifier_country
+from identifier_tools.formats import verify_identifier_format, verify_national_identifier_country
+from identifier_tools.formats_constants import IDENTIFIER_FORMATS
 from .utils import BadCodeType
 
 
@@ -227,8 +228,27 @@ def test_invalid_identifier_formats():
 def test_verify_national_identifier_country_true():
     assert verify_national_identifier_country(country_code="CZ", national_id_type="CZ_ICO_CD") is True
     assert verify_national_identifier_country(country_code="ZZ", national_id_type="BIC") is True
-    assert verify_national_identifier_country(country_code="GB", national_id_type="NON_EXISTING_TYPE") is True
     assert verify_national_identifier_country(country_code="ZZ", national_id_type="GEN_OTHER_CD") is True
+
+    # Territory mapper case
+    assert verify_national_identifier_country(country_code="BL", national_id_type="FR_RNA_CD") is True
+
+    # Monaco special case
+    assert verify_national_identifier_country(country_code="MC", national_id_type="MC_CIB") is True
+
+    # Check countries from GEN_IDENTIFIER_COUNTRY_EXCEPTIONS
+    assert verify_national_identifier_country(country_code="BR", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="CA", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="CH", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="CN", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="GB", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="HK", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="IN", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="JP", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="MX", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="RU", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="TR", national_id_type="GEN_OTHER_CD") is True
+    assert verify_national_identifier_country(country_code="US", national_id_type="GEN_OTHER_CD") is True
 
 
 def test_verify_national_identifier_country_false():
