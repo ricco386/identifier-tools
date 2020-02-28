@@ -10,7 +10,7 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     'BG_UIC_CD': 'https://public.brra.bg/CheckUps/Verifications/VerificationPersonOrg.ra',
     'BG_VAT_CD': 'http://nra.bg/vatbulletin/',
     'BR_CNPJ_CD': (
-        'http://idg.receita.fazenda.gov.br/contato/fale-conosco/empresa/cnpj/cnpj-cadastro-nacional-de-pessoa-juridica',
+        'http://www.receita.fazenda.gov.br/PessoaJuridica/CNPJ/cnpjreva/Cnpjreva_Solicitacao.asp',
         'https://www.infoplex.com.br/'),
     'CA_BN_CD': ('http://www.cra-arc.gc.ca/bn/', 'https://beta.canadasbusinessregistries.ca/search'),
     'CH_UID_CD': ('https://www.uid.admin.ch', 'https://www.zefix.ch/en/search/entity/welcome'),
@@ -40,7 +40,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     'GB_CRN_CD': 'https://beta.companieshouse.gov.uk',
     'GB_UTR_CD': 'https://www.gov.uk/government/organisations/hm-revenue-customs',
     'GR_IMO_CD': 'http://www.imonumbers.lrfairplay.com/',
-    'HK_CR_CD': ('https://www.icris.cr.gov.hk/csci/', 'http://www.hongkongcompanylist.com/'),
+    'HK_CR_CD': ('https://www.icris.cr.gov.hk/csci/login_i.do?loginType=iguest&OPT_01=1&OPT_02=1&OPT_03=1&OPT_04=1&OPT_05=1&OPT_06=1&OPT_07=1&OPT_08=1&OPT_09=1',  # noqa: E501
+                 'http://www.hongkongcompanylist.com/'),
     'HR_MBS_CD': 'https://sudreg.pravosudje.hr/registar/',
     'HR_MB_CD': 'http://www.dzs.hr/',
     'HR_OIB_CD': 'http://oib.oib.hr/SaznajOibWeb/pravnaOsoba.html',
@@ -61,7 +62,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     'MC_CIB': 'https://www.regafi.fr/spip.php?rubrique3',
     'MC_NIS_CD': 'http://www.imsee.mc/Demarches-et-Services/Repertoire-du-NIS',
     'MC_RCI_CD': 'http://www.rci.gouv.mc/rc/',
-    'MX_RFC_CD': ('http://www.sat.gob.mx/Paginas/Inicio.aspx',
+    "MT_CNUM_CD": "https://registry.mbr.mt/ROC/index.jsp#companySearch.do?action=companyDetails",
+    'MX_RFC_CD': ('https://www.gob.mx/busqueda',
                   'https://www.dateas.com/es/explore/empresas-mexicanas/'),
     'NL_KVK_CD': 'http://www.kvk.nl',
     'NL_RSIN_CD': 'http://www.kvk.nl',
@@ -80,7 +82,7 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     'SI_MAT_CD': 'http://www.ajpes.si/prs/default.asp',
     'SK_ICO_CD': 'https://rpo.statistics.sk/rpo',
     'SK_IF_CD': 'https://www.nbs.sk/en/statistics/financial-institutions/money-market-funds-and-investment-funds/list-of-investment-funds',  # noqa: E501
-    'TR_VKN_CD': ('https://www.nvi.gov.tr/', 'https://www.ticaretsicilgazetesi.gov.tr/sorgu_acik.php'),
+    'TR_VKN_CD': 'https://www.nvi.gov.tr/',
     'US_EIN_CD': ('https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers-eins',
                   'https://eintaxid.com/')
 }
