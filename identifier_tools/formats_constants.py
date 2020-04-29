@@ -208,4 +208,4 @@ NBS_IDENTIFIERS = {
 IDENTIFIER_FORMATS = {**ECB_NATIONAL_IDENTIFIERS, **NBS_IDENTIFIERS}
 
 # List of exceptions when checking identifier country, used in formats.verify_national_identifier_country
-GEN_IDENTIFIER_COUNTRY_EXCEPTIONS = ("BR", "CA", "CH", "CN", "GB", "HK", "IN", "JP", "MX", "RU", "TR", "US")
+GEN_IDENTIFIER_COUNTRY_EXCEPTIONS = ("BR", "CA", "CH", "CN", "GB", "HK", "IN", "JP", "MH", "MX", "NO", "RU", "TR", "US")
