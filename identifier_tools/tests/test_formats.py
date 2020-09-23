@@ -78,6 +78,8 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier="00006947", identifier_type="CZ_ICO_CD") is True
     assert verify_identifier_format(identifier="90091883", identifier_type="CZ_NID_CD") is True
     assert verify_identifier_format(identifier="8080107948", identifier_type="CZ_NID_CD") is True
+    assert verify_identifier_format(identifier="DE811258273", identifier_type="DE_VAT_CD") is True
+    assert verify_identifier_format(identifier="2475081508155", identifier_type="DE_TAX_CD") is True
     assert verify_identifier_format(identifier="22756214", identifier_type="DK_CVR_CD") is True
     assert verify_identifier_format(identifier="3000-01", identifier_type="DK_FT_CD") is True
     assert verify_identifier_format(identifier="3000", identifier_type="DK_FT_CD") is True
