@@ -209,6 +209,7 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier="71524152", identifier_type="TR_VKN_CD") is True
     assert verify_identifier_format(identifier="21-2567152", identifier_type="US_EIN_CD") is True
     assert verify_identifier_format(identifier="2153177", identifier_type="HK_CR_CD") is True
+    assert verify_identifier_format(identifier="F0002646", identifier_type="HK_CR_CD") is True
     assert verify_identifier_format(identifier="GV1040", identifier_type="IE_GOV_CD") is True
     assert verify_identifier_format(identifier="LA006", identifier_type="IE_GOV_CD") is True
     assert verify_identifier_format(identifier="987654321", identifier_type="NO_NBR_CD") is True
