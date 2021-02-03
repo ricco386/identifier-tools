@@ -1,10 +1,10 @@
 Identifier Tools
 ################
 
-.. image:: https://gitlab.ore.nbs.sk/ore/identifier-tools/badges/master/pipeline.svg
+.. image:: https://gitlab.nbs.sk/ofi/identifier-tools/badges/master/pipeline.svg
   :alt: pipeline status
 
-.. image:: https://gitlab.ore.nbs.sk/ore/identifier-tools/badges/master/coverage.svg
+.. image:: https://gitlab.nbs.sk/ofi/identifier-tools/badges/master/coverage.svg
   :alt: coverage report
 
 Library that helps working with different subject identifier types. Purpose of this library is to validate string
@@ -28,11 +28,11 @@ Installation
 
 Install the released version::
 
-    pip install identifier-tools
+    pip install https://gitlab.nbs.sk/ofi/identifier-tools/-/archive/v2.3.0/identifier-tools-v2.3.0.zip --trusted-host gitlab.nbs.sk
 
 Alternatively you can install the package latest development version from the git repository::
 
-    pip install https://gitlab.ore.nbs.sk/ore/identifier-tools/-/archive/master/identifier-tools-master.zip --trusted-host gitlab.ore.nbs.sk
+    pip install https://gitlab.nbs.sk/ofi/identifier-tools/-/archive/master/identifier-tools-master.zip --trusted-host gitlab.nbs.sk
 
 Development
 -----------
