@@ -34,7 +34,7 @@ setup(
     author='Richard Kellner',
     author_email='richard.kellner@nbs.sk',
     license='MIT',
-    url='https://gitlab.ore.nbs.sk/ore/identifier-tools',
+    url='https://gitlab.nbs.sk/ofi/identifier-tools',
     packages=find_packages(),
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],

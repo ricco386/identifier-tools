@@ -1,7 +1,7 @@
 # Jobs are used to create builds, which are then picked up by Runners and 
 # executed within the environment of the Runner. What is important, is that 
 # each job is run independently from each other.
-image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.8.0-oracle12.2
+image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.8.7-oracle12.2
 
 # First all jobs of build are executed in parallel.
 # If all jobs of build succeed, the test jobs are executed in parallel.
@@ -37,9 +37,9 @@ Package_installation:3.8:
    - python setup.py install
   when: on_success
 
-#Package_installation:3.7:
+#Package_installation:3.9:
 #  stage: install
-#  image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.7.5-oracle12.2
+#  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.9.1-oracle12.2
 #  script:
 #   - echo "---------> Install Package"
 #   - python --version
@@ -48,7 +48,7 @@ Package_installation:3.8:
 #
 #Package_installation:3.6:
 #  stage: install
-#  image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.6-oracle12.2
+#  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.6.12-oracle12.2-updated
 #  script:
 #   - echo "---------> Install Package"
 #   - python --version
@@ -95,6 +95,17 @@ Code_Complexity:
     - radon cc identifier_tools -a -i tests
    when: on_success
 
+Test_code_Python:3.9:
+  stage: test
+  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.9.1-oracle12.2
+  script:
+   - python --version
+   - echo "---------> Install pytest and coverage"
+   - pip install pytest pytest-cov --quiet
+   - echo "---------> Run tests and get coverage"
+   - pytest --cov identifier_tools
+  when: on_success
+
 Test_code_Python:3.8:
   stage: test
   script:
@@ -105,20 +116,9 @@ Test_code_Python:3.8:
    - pytest --cov identifier_tools
   when: on_success
 
-Test_code_Python:3.7:
-  stage: test
-  image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.7.5-oracle12.2
-  script:
-   - python --version
-   - echo "---------> Install pytest"
-   - pip install pytest --quiet
-   - echo "---------> Run tests"
-   - pytest identifier_tools
-  when: on_success
-
 Test_code_Python:3.6:
   stage: test
-  image: gitlab.ore.nbs.sk:5443/ore/docker-images/python3-oracle:py3.6-oracle12.2
+  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.6.12-oracle12.2-updated
   script:
    - python --version
    - echo "---------> Install pytest"
