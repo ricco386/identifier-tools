@@ -123,7 +123,7 @@ dlint_sast:
   before_script:
   - pip install dlint --quiet
   script:
-  - flake8 --select=DUO setup.py django_nbs
+  - flake8 --select=DUO setup.py identifier_tools
   when: on_success
 
 # Bandit_code_analysis:
@@ -133,7 +133,7 @@ dlint_sast:
 #    - pip install bandit --quiet
 #   script:
 #    - echo "---------> Run Security Static Code Analysis"
-#    - bandit -r django_nbs -x django_nbs/tests
+#    - bandit -r identifier_tools -x identifier_tools/tests
 #   when: on_success
 
 sast:
