@@ -78,6 +78,12 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier="00006947", identifier_type="CZ_ICO_CD") is True
     assert verify_identifier_format(identifier="90091883", identifier_type="CZ_NID_CD") is True
     assert verify_identifier_format(identifier="8080107948", identifier_type="CZ_NID_CD") is True
+    assert verify_identifier_format(identifier="GnR3034LA-D4102", identifier_type="DE_TRD_RGSTR_CD") is True
+    assert verify_identifier_format(identifier="GNR3034LA-D4102", identifier_type="DE_TRD_RGSTR_CD") is True
+    assert verify_identifier_format(identifier="HRA100484-K1101", identifier_type="DE_TRD_RGSTR_CD") is True
+    assert verify_identifier_format(identifier="HRB1234UE-R1101", identifier_type="DE_TRD_RGSTR_CD") is True
+    assert verify_identifier_format(identifier="PR2359-Y1101", identifier_type="DE_TRD_RGSTR_CD") is True
+    assert verify_identifier_format(identifier="VR350378-M1305", identifier_type="DE_TRD_RGSTR_CD") is True
     assert verify_identifier_format(identifier="DE811258273", identifier_type="DE_VAT_CD") is True
     assert verify_identifier_format(identifier="2475081508155", identifier_type="DE_TAX_CD") is True
     assert verify_identifier_format(identifier="22756214", identifier_type="DK_CVR_CD") is True
@@ -165,6 +171,8 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier="PL7740001454", identifier_type="PL_VAT_CD") is True
     assert verify_identifier_format(identifier="500792771", identifier_type="PT_NIF_CD") is True
     assert verify_identifier_format(identifier="502", identifier_type="PT_FSA_CD") is True
+    assert verify_identifier_format(identifier="1131", identifier_type="PT_IF_CD") is True
+    assert verify_identifier_format(identifier="1206", identifier_type="PT_ASF_CD") is True
     assert verify_identifier_format(identifier="RO1234567890", identifier_type="RO_CUI_CD") is True
     assert verify_identifier_format(identifier="J40/8302/1997", identifier_type="RO_TRN_CD") is True
     assert verify_identifier_format(identifier="RO9999999999", identifier_type="RO_TAX_CD") is True
