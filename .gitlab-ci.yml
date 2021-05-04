@@ -1,7 +1,7 @@
 # Jobs are used to create builds, which are then picked up by Runners and 
 # executed within the environment of the Runner. What is important, is that 
 # each job is run independently from each other.
-image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.8.7-oracle12.2
+image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.8.9-oracle21.1.-trusted-certs
 
 # First all jobs of build are executed in parallel.
 # If all jobs of build succeed, the test jobs are executed in parallel.
@@ -13,6 +13,7 @@ stages:
   - security
   - test
   - standards
+  - release
 
 variables:
  GIT_SSL_NO_VERIFY: "true"
@@ -39,7 +40,7 @@ Package_installation:3.8:
 
 #Package_installation:3.9:
 #  stage: install
-#  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.9.1-oracle12.2
+#  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.9.4-oracle21.1
 #  script:
 #   - echo "---------> Install Package"
 #   - python --version
@@ -48,7 +49,7 @@ Package_installation:3.8:
 #
 #Package_installation:3.6:
 #  stage: install
-#  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.6.12-oracle12.2-updated
+#  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.6.13-oracle21.1
 #  script:
 #   - echo "---------> Install Package"
 #   - python --version
@@ -97,7 +98,7 @@ Code_Complexity:
 
 Test_code_Python:3.9:
   stage: test
-  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.9.1-oracle12.2
+  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.9.4-oracle21.1
   script:
    - python --version
    - echo "---------> Install pytest and coverage"
@@ -118,7 +119,7 @@ Test_code_Python:3.8:
 
 Test_code_Python:3.6:
   stage: test
-  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.6.12-oracle12.2-updated
+  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.6.13-oracle21.1
   script:
    - python --version
    - echo "---------> Install pytest"
@@ -126,3 +127,18 @@ Test_code_Python:3.6:
    - echo "---------> Run tests"
    - pytest identifier_tools
   when: on_success
+
+ReleasePackage:
+  stage: release
+  script:
+   - ls -l /etc/ssl/certs/
+   - ls -l /usr/share/ca-certificates/
+   - echo "---------> Install twine"
+   - pip install twine
+   - echo "---------> Release Package"
+   - python setup.py sdist bdist_wheel
+   - echo "---------> Upload to GitLab PyPI"
+   - TWINE_PASSWORD=${CI_JOB_TOKEN} TWINE_USERNAME=package-bot python -m twine upload --repository-url https://gitlab.nbs.sk/api/v4/projects/${CI_PROJECT_ID}/packages/pypi dist/* --cert /usr/share/ca-certificates/nbs.crt
+  when: on_success
+  only:
+   - tags
