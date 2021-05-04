@@ -65,7 +65,7 @@ def calculate_iso7064_checksum(code: str) -> str:
     numeric_code = convert_code_with_iso7064_map(code)
     checksum = 98 - ((numeric_code * 100) % 97) % 97
 
-    return '%02d' % checksum
+    return "%02d" % checksum
 
 
 def verify_iso7064_code(code: str) -> bool:

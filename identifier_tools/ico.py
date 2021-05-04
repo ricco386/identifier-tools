@@ -10,7 +10,7 @@ def verify_ico_checksum(ico: str) -> bool:
     else:
         ico = ico.strip()
 
-    if not verify_identifier_format(ico, 'SK_ICO_CD'):
+    if not verify_identifier_format(ico, "SK_ICO_CD"):
         return False
 
     sucet = 0
@@ -35,7 +35,7 @@ def verify_ico_ni_checksum(ico_ni: str) -> bool:
     else:
         ico_ni = ico_ni.strip()
 
-    if not verify_identifier_format(ico_ni, 'ICO_NI'):
+    if not verify_identifier_format(ico_ni, "ICO_NI"):
         return False
 
     return verify_ico_checksum(ico_ni[:8])

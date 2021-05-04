@@ -1,13 +1,14 @@
 from identifier_tools.formats import verify_identifier_format, verify_national_identifier_country
 from identifier_tools.formats_constants import IDENTIFIER_FORMATS
+
 from .utils import BadCodeType
 
 
 def test_invalid_input_identifier_format_type():
     assert verify_identifier_format(identifier=None, identifier_type=None) is False
-    assert verify_identifier_format(identifier='12345678', identifier_type=None) is False
-    assert verify_identifier_format(identifier=None, identifier_type='SK_ICO_CD') is False
-    assert verify_identifier_format(identifier='12345678', identifier_type='SK_ICO_CD') is True
+    assert verify_identifier_format(identifier="12345678", identifier_type=None) is False
+    assert verify_identifier_format(identifier=None, identifier_type="SK_ICO_CD") is False
+    assert verify_identifier_format(identifier="12345678", identifier_type="SK_ICO_CD") is True
 
     identifiers = ("11841036", "11841036x")
     identifiers_types = ("SK_ICO_CD", "ICO_NI")
@@ -17,26 +18,23 @@ def test_invalid_input_identifier_format_type():
         "ico": "11841036",
         "ico_ni": "11841036x",
     }
-    identifiers_types = {
-        "ico": "SK_ICO_CD",
-        "ico_ni": "ICO_NI"
-    }
+    identifiers_types = {"ico": "SK_ICO_CD", "ico_ni": "ICO_NI"}
     assert verify_identifier_format(identifier=identifiers, identifier_type=identifiers_types) is False
 
     identifier = 11841036
-    assert verify_identifier_format(identifier=identifier, identifier_type='SK_ICO_CD') is False
-    assert verify_identifier_format(identifier='12345678', identifier_type=identifier) is False
+    assert verify_identifier_format(identifier=identifier, identifier_type="SK_ICO_CD") is False
+    assert verify_identifier_format(identifier="12345678", identifier_type=identifier) is False
 
     identifier = BadCodeType()
-    assert verify_identifier_format(identifier='12345678', identifier_type=identifier) is False
+    assert verify_identifier_format(identifier="12345678", identifier_type=identifier) is False
 
 
 def test_unknown_type_strict_checking():
-    assert verify_identifier_format(identifier='', identifier_type='XX_XXX_XX', allow_unknown_type=True) is False
-    assert verify_identifier_format(identifier='', identifier_type='XX_XXX_XX', allow_unknown_type=False) is False
+    assert verify_identifier_format(identifier="", identifier_type="XX_XXX_XX", allow_unknown_type=True) is False
+    assert verify_identifier_format(identifier="", identifier_type="XX_XXX_XX", allow_unknown_type=False) is False
 
-    assert verify_identifier_format(identifier=' ', identifier_type='XX_XXX_XX', allow_unknown_type=True) is True
-    assert verify_identifier_format(identifier=' ', identifier_type='XX_XXX_XX', allow_unknown_type=False) is False
+    assert verify_identifier_format(identifier=" ", identifier_type="XX_XXX_XX", allow_unknown_type=True) is True
+    assert verify_identifier_format(identifier=" ", identifier_type="XX_XXX_XX", allow_unknown_type=False) is False
 
 
 def test_known_type_identifier_length():

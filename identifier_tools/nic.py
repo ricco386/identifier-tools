@@ -1,6 +1,7 @@
 import datetime
-from .iso import verify_iso7064_code, calculate_iso7064_checksum
+
 from .formats import verify_identifier_format
+from .iso import calculate_iso7064_checksum, verify_iso7064_code
 
 
 def verify_nic_sequence_checksum(sequence: str, checksum: str) -> bool:
@@ -26,7 +27,7 @@ def verify_nic_checksum(nic: str) -> bool:
     else:
         nic = nic.strip()
 
-    if not verify_identifier_format(nic, 'NIC'):
+    if not verify_identifier_format(nic, "NIC"):
         return False
 
     if not int(nic[9:13]) > 0:

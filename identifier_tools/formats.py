@@ -37,11 +37,14 @@ def verify_national_identifier_country(country_code: str, national_id_type: str)
 
     country_national_codes = [x for x in constants.ECB_NATIONAL_IDENTIFIERS if x.startswith(country_iso2_mapped)]
 
-    if national_id_type.startswith(country_iso2_mapped) \
-            or national_id_type == "BIC" \
-            or (
-                national_id_type.startswith("GEN") and (len(country_national_codes) == 0 or country_iso2_mapped
-                                                        in constants.GEN_IDENTIFIER_COUNTRY_EXCEPTIONS)):
+    if (
+        national_id_type.startswith(country_iso2_mapped)
+        or national_id_type == "BIC"
+        or (
+            national_id_type.startswith("GEN")
+            and (len(country_national_codes) == 0 or country_iso2_mapped in constants.GEN_IDENTIFIER_COUNTRY_EXCEPTIONS)
+        )
+    ):
         return True
     else:
         return False
