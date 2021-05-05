@@ -22,12 +22,11 @@ stages:
 variables:
   GIT_SSL_NO_VERIFY: 'true'
   # NBS Proxy variables
-  http_proxy: 'http://www-int.nbs.sk/proxy.pac'
-  https_proxy: 'http://www-int.nbs.sk/proxy.pac'
+  http_proxy: 'http://proxy.nbs.sk:3128'
+  https_proxy: 'http://proxy.nbs.sk:3128'
   no_proxy: 'localhost,127.0.0.1,.nbs.sk'
-  HTTP_PROXY: 'http://www-int.nbs.sk/proxy.pac'
-  HTTPS_PROXY: 'http://www-int.nbs.sk/proxy.pac'
-  FTP_PROXY: 'http://www-int.nbs.sk/proxy.pac'
+  HTTP_PROXY: 'http://proxy.nbs.sk:3128'
+  HTTPS_PROXY: 'http://proxy.nbs.sk:3128'
   NO_PROXY: 'localhost,127.0.0.1,.nbs.sk'
   ## helper variables to enable verbose output for debugging purposes
   # GIT_CURL_VERBOSE: "1"
