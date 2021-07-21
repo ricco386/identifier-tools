@@ -11,7 +11,17 @@ def verify_identifier_format(identifier: str, identifier_type: str, allow_unknow
     if not isinstance(identifier, str) or not isinstance(identifier_type, str):
         result = False
     elif identifier_type in constants.IDENTIFIER_FORMATS:
-        result = bool(re.match(constants.IDENTIFIER_FORMATS[identifier_type], identifier))
+        if bool(re.match(constants.IDENTIFIER_FORMATS[identifier_type], identifier)):
+            result = True
+
+            if identifier_type == "DE_TRD_RGSTR_CD":
+                xjustiz_id = identifier.split("-")[1]
+
+                if xjustiz_id not in constants.DE_TRD_RGSTR_CD_XJUSTIZ_ID:
+                    result = False
+
+        else:
+            result = False
     elif allow_unknown_type:
         result = bool(re.match("[^+,]{1,50}", identifier))
     else:

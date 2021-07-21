@@ -1,4 +1,8 @@
-from identifier_tools.lei import verify_lei_checksum, verify_lei_checksum_new, verify_lei_checksum_old
+from identifier_tools.lei import (
+    verify_lei_checksum,
+    verify_lei_checksum_new,
+    verify_lei_checksum_old,
+)
 
 from .utils import BadCodeType
 

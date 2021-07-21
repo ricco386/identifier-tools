@@ -1,6 +1,10 @@
 import pytest
 
-from identifier_tools.iso import calculate_iso7064_checksum, convert_code_with_iso7064_map, verify_iso7064_code
+from identifier_tools.iso import (
+    calculate_iso7064_checksum,
+    convert_code_with_iso7064_map,
+    verify_iso7064_code,
+)
 
 from .utils import BadCodeType
 
