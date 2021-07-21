@@ -1,4 +1,7 @@
-from identifier_tools.formats import verify_identifier_format, verify_national_identifier_country
+from identifier_tools.formats import (
+    verify_identifier_format,
+    verify_national_identifier_country,
+)
 from identifier_tools.formats_constants import IDENTIFIER_FORMATS
 
 from .utils import BadCodeType
