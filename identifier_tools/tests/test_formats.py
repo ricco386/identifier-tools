@@ -1,10 +1,15 @@
 from identifier_tools.formats import (
     verify_identifier_format,
     verify_national_identifier_country,
+    get_country_identifiers,
+    get_identifier_rank,
+    get_sorted_identifiers,
 )
-from identifier_tools.formats_constants import IDENTIFIER_FORMATS
 
 from .utils import BadCodeType
+from ..formats_constants import IDENTIFIER_FORMATS
+from ..formats_constants import ECB_NATIONAL_IDENTIFIERS as IDENTIFIERS
+from ..formats_constants import COUNTRY_IDENTIFIER_RANK as RANKS
 
 
 def test_invalid_input_identifier_format_type():
@@ -266,3 +271,46 @@ def test_verify_national_identifier_country_true():
 def test_verify_national_identifier_country_false():
     assert verify_national_identifier_country(country_code="SK", national_id_type="CZ_ICO_CD") is False
     assert verify_national_identifier_country(country_code="ZZ", national_id_type="NON_EXISTING_TYPE") is False
+
+
+def test_get_country_identifiers():
+    assert get_country_identifiers("XX") == []
+    assert get_country_identifiers("5") == []
+    assert get_country_identifiers("") == []
+    assert get_country_identifiers("TR") == [(1, "TR_VKN_CD")]
+
+
+def test_get_identifier_rank():
+    assert get_identifier_rank("BIC") == 33
+    assert get_identifier_rank("DE_HRB") == 35
+    assert get_identifier_rank("DE_DRB") == 35
+    assert get_identifier_rank("XXX") == 35
+    assert get_identifier_rank("US_EIN_CD") == 1
+    assert get_identifier_rank("US_CIK_CD") == 2
+    assert get_identifier_rank("GEN_TRD_RGSTR_ENTTY_CD") == 24
+    assert get_identifier_rank("GEN_PS_CD") == 28
+
+
+def test_get_sorted_identifiers():
+    assert get_sorted_identifiers([(6175, "US_CIK_CD"), (6162, "US_EIN_CD"), (6174, "US_DSFN_CD")]) == [
+        6175,
+        6162,
+        6174,
+    ]
+    assert get_sorted_identifiers([]) == []
+
+
+def test_regex_for_every_rank():
+    ranks_len = 0
+    ranks_identifiers = set()
+    national_identifiers = set()
+
+    for identifier in IDENTIFIERS.keys():
+        national_identifiers.add(identifier)
+
+    for item in RANKS.items():
+        for j in item[1]:
+            ranks_identifiers.add(j[1])
+            ranks_len += 1
+
+    assert len(ranks_identifiers - national_identifiers) == 0
