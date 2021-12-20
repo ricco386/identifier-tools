@@ -57,6 +57,7 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "FR_SIREN_CD": "https://www.sirene.fr/sirene/public/accueil",
     "GB_CRN_CD": "https://beta.companieshouse.gov.uk",
     "GB_UTR_CD": "https://www.gov.uk/government/organisations/hm-revenue-customs",
+    "GR_AFM_CD": "https://www.businessregistry.gr/publicity/index",
     "GR_IMO_CD": "http://www.imonumbers.lrfairplay.com/",
     "HK_CR_CD": (
         "https://www.icris.cr.gov.hk/csci/login_i.do?loginType=iguest&OPT_01=1&OPT_02=1&OPT_03=1&OPT_04=1&OPT_05=1"
