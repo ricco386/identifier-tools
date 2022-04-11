@@ -226,8 +226,11 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier="F0002646", identifier_type="HK_CR_CD") is True
     assert verify_identifier_format(identifier="GV1040", identifier_type="IE_GOV_CD") is True
     assert verify_identifier_format(identifier="LA006", identifier_type="IE_GOV_CD") is True
+    assert verify_identifier_format(identifier="IE1234567WH", identifier_type="IE_VAT_CD") is True
+    assert verify_identifier_format(identifier="IE1234567", identifier_type="IE_VAT_CD") is True
     assert verify_identifier_format(identifier="987654321", identifier_type="NO_NBR_CD") is True
     assert verify_identifier_format(identifier="4307493", identifier_type="US_DSFN_CD") is True
+    assert verify_identifier_format(identifier="430749", identifier_type="US_DSFN_CD") is True
     assert verify_identifier_format(identifier="0001543040", identifier_type="US_CIK_CD") is True
     assert verify_identifier_format(identifier="123-to-je-jedno-nema-regex", identifier_type="GEN_NOTAP_CD") is True
     assert verify_identifier_format(identifier="123-to-je-jedno-nema-regex", identifier_type="AT_NOTAP_CD") is True
