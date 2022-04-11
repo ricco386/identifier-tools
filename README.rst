@@ -32,7 +32,7 @@ Installation
 
 Install the released version::
 
-    pip install https://gitlab.nbs.sk/ofi/identifier-tools/-/archive/v2.4.3/identifier-tools-v2.4.3.zip --trusted-host gitlab.nbs.sk
+    pip install https://gitlab.nbs.sk/ofi/identifier-tools/-/archive/v2.5/identifier-tools-v2.5.zip --trusted-host gitlab.nbs.sk
 
 Alternatively you can install the package latest development version from the git repository::
 

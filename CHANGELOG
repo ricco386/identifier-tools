@@ -1,6 +1,19 @@
+# Release 2.5
+
+* RS-820 Updated regex to match list of national identifiers v2.9
+    * new identifier IE_VAT_CD with RegEx and rank
+    * update rank for IE_NOTAP_CD
+    * update RegEx for JP_CN_CD
+    * update RegEx for US_DSFN_CD
+
 # Release 2.4.3
 
 * GR_AFM_CD link added
+
+# Release 2.4.2
+
+* RS-550 - priority of identifiers for registration to riad
+* RS-781 fix of broken branch in purpose of preservation of history
 
 # Release 2.4.1
 
