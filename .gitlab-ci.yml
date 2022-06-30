@@ -1,7 +1,7 @@
 # Jobs are used to create builds, which are then picked up by Runners and
 # executed within the environment of the Runner. What is important, is that
 # each job is run independently from each other.
-image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.8.9-oracle21.1.-trusted-certs
+image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.8.13-oracle21.6
 
 # Define ALL stages that will be executed during GitLab CI
 #
