@@ -1,7 +1,7 @@
 # Jobs are used to create builds, which are then picked up by Runners and
 # executed within the environment of the Runner. What is important, is that
 # each job is run independently from each other.
-image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.8.9-oracle21.1.-trusted-certs
+image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.9.13-oracle21.7
 
 # Define ALL stages that will be executed during GitLab CI
 #
@@ -41,7 +41,7 @@ include:
 #
 # Install stage
 #
-Package_installation:3.8:
+Package_installation:3.9:
   stage: install
   before_script:
     - python --version
@@ -81,9 +81,9 @@ Black_formatting:
 #
 # Test stage
 #
-Python:3.9_test_code:
+Python:3.10_test_code:
   stage: test
-  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.9.4-oracle21.1
+  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.10.6-oracle21.7
   before_script:
     - python --version
     - pip install pytest --quiet
@@ -91,7 +91,7 @@ Python:3.9_test_code:
     - pytest identifier_tools
   when: on_success
 
-Python:3.8_test_code:
+Python:3.9_test_code:
   stage: test
   before_script:
     - python --version
@@ -104,9 +104,19 @@ Python:3.8_test_code:
       cobertura: coverage.xml
   when: on_success
 
+Python:3.8_test_code:
+  stage: test
+  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.8.13-oracle21.7
+  before_script:
+    - python --version
+    - pip install pytest --quiet
+  script:
+    - pytest identifier_tools
+  when: on_success
+
 Python:3.6_test_code:
   stage: test
-  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.6.13-oracle21.1
+  image: registry.gitlab.nbs.sk/ofi/docker-images/python3-oracle:py3.6.15-oracle21.5
   before_script:
     - python --version
     - pip install pytest --quiet
