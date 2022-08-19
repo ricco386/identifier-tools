@@ -11,7 +11,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
         "https://firmenbuch.at",
     ),
     "AT_GEM_CD": "http://www.statistik.at/web_de/klassifikationen/regionale_gliederungen/gemeinden/index.html",
-    "AT_IDENT_CD": "https://www.usp.gv.at/Portal.Node/usp/public/content/laufender_betrieb/firmenbuch/firmenbuchabfrage/Seite.760006.html",
+    "AT_IDENT_CD": "https://www.usp.gv.at/Portal.Node/usp/public/content/laufender_betrieb/firmenbuch/firmenbuchabfrage"
+    "/Seite.760006.html",
     "AT_LAE_CD": "http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=63546",
     "AT_ZVR_CD": "http://zvr.bmi.gv.at/Start",
     "AU_ABN_CD": (
@@ -68,7 +69,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "CY_CBCID_CD": "https://www.centralbank.cy/images/media/xls/CY_CBCID_CD.xlsx",
     "CY_DRCOR_CD": "https://efiling.drcor.mcit.gov.cy/DrcorPublic/SearchForm.aspx?sc=0&cultureInfo=en-AU",
     "CY_GG_CD": "https://www.centralbank.cy/images/media/xls/CY_GG_CD.xlsx",
-    "CY_IF_CD": "https://www.centralbank.cy/en/statistics/money-and-banking-statistics-and-financial-accounts/lists-of-financial-institutions",
+    "CY_IF_CD": "https://www.centralbank.cy/en/statistics/money-and-banking-statistics-and-financial-accounts/lists-of-"
+    "financial-institutions",
     "CZ_ICO_CD": (
         "https://or.justice.cz/ias/ui/rejstrik",
         "https://apl.czso.cz/irsw/",
@@ -92,7 +94,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "FI_SIRA_CD": "http://www.suomenpankki.fi/en/tilastot/sijoitusrahastot/Pages/sijoitusrahastolista.aspx",
     "FI_Y_CD": "https://tietopalvelu.ytj.fi/yrityshaku.aspx?kielikoodi=3",
     "FR_CIB": "https://www.regafi.fr/spip.php?rubrique3",
-    "FR_IF_CD": "https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/index.en.html",
+    "FR_IF_CD": "https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/index.en."
+    "html",
     "FR_RNA_CD": "https://www.data.gouv.fr/fr/datasets/repertoire-national-des-associations-rna/",
     "FR_SIREN_CD": "https://www.sirene.fr/sirene/public/accueil",
     "GB_CRN_CD": "https://beta.companieshouse.gov.uk",
@@ -101,7 +104,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "GR_AFM_CD": "https://www.businessregistry.gr/publicity/index",
     "GR_IMO_CD": "http://www.imonumbers.lrfairplay.com/",
     "HK_CR_CD": (
-        "https://www.icris.cr.gov.hk/csci/login_i.do?loginType=iguest&OPT_01=1&OPT_02=1&OPT_03=1&OPT_04=1&OPT_05=1&OPT_06=1&OPT_07=1&OPT_08=1&OPT_09=1",
+        "https://www.icris.cr.gov.hk/csci/login_i.do?loginType=iguest&OPT_01=1&OPT_02=1&OPT_03=1&OPT_04=1&OPT_05=1&OPT_"
+        "06=1&OPT_07=1&OPT_08=1&OPT_09=1",
         "http://www.hongkongcompanylist.com/",
     ),
     "HR_MBS_CD": "https://sudreg.pravosudje.hr/registar/",
@@ -112,7 +116,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "IE_GOV_CD": "https://www.centralbank.ie/statistics/statistical-reporting-requirements/anacredit-in-ireland",
     "IL_TAX_CD": "https://ica.justice.gov.il/IcaSite/",
     "IM_RN_CD": "https://services.gov.im/companies-registry",
-    "IM_TAX_CD": "https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/personal-tax/reference-numbers/",
+    "IM_TAX_CD": "https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/personal-tax/"
+    "reference-numbers/",
     "IN_CIN_CD": "http://www.mca.gov.in/mcafoportal/checkCompanyName.do",
     "IT_UCITS_CD": "https://infostat.bancaditalia.it/giava-inquiry-public/flex/Giava/GIAVAFEInquiry.html#",
     "JP_CN_CD": (
@@ -124,7 +129,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "LU_IF_CD": "https://supervisedentities.apps.cssf.lu/index.html?language=fr&type=OPC#Home",
     "LU_RCS_CD": "https://lu.kompass.com",
     "LU_VAT_CD": "https://lu.kompass.com",
-    "LV_FON_CD": "https://www.bank.lv/en/statistics/information-for-data-users/lists/investment-funds-of-the-republic-of-latvia",
+    "LV_FON_CD": "https://www.bank.lv/en/statistics/information-for-data-users/lists/investment-funds-of-the-republic-"
+    "of-latvia",
     "LV_NBR_CD": "http://www.lursoft.lv/en/data-bases-of-companies",
     "LV_VAT_CD": "http://www.lursoft.lv/en/data-bases-of-companies",
     "MC_CIB": "https://www.regafi.fr/spip.php?rubrique3",
@@ -140,7 +146,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "NL_RSIN_CD": "http://www.kvk.nl",
     "NO_NBR_CD": "https://w2.brreg.no/enhet/sok/",
     "PA_RUC_CD": "http://www.panamacompra.gob.pa/ambientepublico/AP_BuscarProveedorBA.aspx?Popup=True&Texto=",
-    "PE_RUC_CD": "https://dgi.mef.gob.pa/Registro.php#:~:text=El%20Registro%20%C3%9Anico%20de%20Contribuyente,personas%20naturales%2C%20comunidades%2C%20sociedades%2C",
+    "PE_RUC_CD": "https://dgi.mef.gob.pa/Registro.php#:~:text=El%20Registro%20%C3%9Anico%20de%20Contribuyente,personas%"
+    "20naturales%2C%20comunidades%2C%20sociedades%2C",
     "PL_KRS_CD": "https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu?t:lb=t",
     "PL_NIP_CD": (
         "https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu?t:lb=t",
@@ -162,13 +169,15 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "SE_ORG_CD": "http://www.bolagsverket.se/en/info/buy/e-services/company-information",
     "SG_ROB_CD": (
         "https://www.bizfile.gov.sg/ngbbizfileinternet/faces/oracle/webcenter/portalapp/pages/BizfileHomepage.jspx",
-        "https://www.tis.bizfile.gov.sg/ngbtisinternet/faces/oracle/webcenter/portalapp/pages/TransactionMain.jspx?selectedETransId=dirSearch",
+        "https://www.tis.bizfile.gov.sg/ngbtisinternet/faces/oracle/webcenter/portalapp/pages/TransactionMain.jspx?sele"
+        "ctedETransId=dirSearch",
     ),
     "SI_DAV_CD": "http://www.ajpes.si/prs/default.asp",
     "SI_DDV_CD": "http://www.ajpes.si/prs/default.asp",
     "SI_MAT_CD": "http://www.ajpes.si/prs/default.asp",
     "SK_ICO_CD": "https://rpo.statistics.sk/rpo",
-    "SK_IF_CD": "https://www.nbs.sk/en/statistics/financial-institutions/money-market-funds-and-investment-funds/list-of-investment-funds",
+    "SK_IF_CD": "https://www.nbs.sk/en/statistics/financial-institutions/money-market-funds-and-investment-funds/list-"
+    "of-investment-funds",
     "SM_COE_CD": "https://registroimprese.cc.sm/",
     "TR_VKN_CD": "https://www.nvi.gov.tr/",
     "TW_TAX_CD": "https://gcis.nat.gov.tw/mainNew/English/subclassEnAction.do?method=getFile&pk=103",
@@ -280,7 +289,8 @@ ECB_NATIONAL_IDENTIFIERS = {
     "LU_IF_CD": "^[A-Z][0-9]{6}C[0-9]{5}$",
     "LU_RCS_CD": "^[A-Z][0-9]+$",
     "LU_VAT_CD": "^[0-9]{8}$",
-    "LV_FON_CD": "(^LVAF[0-9]{3}[AB0-9]{1}[0-9]{2}$)|(^LVIF[0-9]{3}[ABCDEF0-9]{1}[0-9]{2}$)|(^LVB[0-9]{6}$)|(^LVVF[0-9]{6}$)|(^LV[0-9]{11}$)",
+    "LV_FON_CD": "(^LVAF[0-9]{3}[AB0-9]{1}[0-9]{2}$)|(^LVIF[0-9]{3}[ABCDEF0-9]{1}[0-9]{2}$)|(^LVB[0-9]{6}$)|"
+    "(^LVVF[0-9]{6}$)|(^LV[0-9]{11}$)",
     "LV_NBR_CD": "^[0-9]{11}$",
     "LV_VAT_CD": "^LV[0-9]{11}$",
     "MC_CIB": "^[0-9]{5}$",
