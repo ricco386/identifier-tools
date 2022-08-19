@@ -101,7 +101,9 @@ Python:3.9_test_code:
     - coverage xml
   artifacts:
     reports:
-      cobertura: coverage.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
   when: on_success
 
 Python:3.8_test_code:
