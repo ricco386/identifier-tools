@@ -112,6 +112,7 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "HR_MB_CD": "http://www.dzs.hr/",
     "HR_OIB_CD": "http://oib.oib.hr/SaznajOibWeb/pravnaOsoba.html",
     "HU_CEG_CD": "https://www.e-cegjegyzek.hu/?cegkereses",
+    "HU_KOZ_CD": "https://www.e-cegjegyzek.hu/?cegkereses",
     "IE_CRO_CD": "https://search.cro.ie",
     "IE_GOV_CD": "https://www.centralbank.ie/statistics/statistical-reporting-requirements/anacredit-in-ireland",
     "IL_TAX_CD": "https://ica.justice.gov.il/IcaSite/",
