@@ -34,7 +34,7 @@ setup(
     author="Richard Kellner",
     author_email="richard.kellner@nbs.sk",
     license="MIT",
-    url="https://gitlab.nbs.sk/ofi/identifier-tools",
+    url="https://github.com/ricco386/identifier-tools",
     packages=find_packages(),
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],

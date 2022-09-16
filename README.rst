@@ -1,16 +1,6 @@
 Identifier Tools
 ################
 
-.. image:: https://gitlab.nbs.sk/ofi/identifier-tools/badges/master/pipeline.svg
-   :alt: pipeline status
-   :target: https://gitlab.nbs.sk/ofi/identifier-tools/-/pipelines
-
-.. image:: https://gitlab.nbs.sk/ofi/identifier-tools/badges/master/coverage.svg
-   :alt: coverage report
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
-
 Library that helps working with different subject identifier types. Purpose of this library is to validate string
 if it matches the identifier format and if possible calculate checksum if it is correct for identifier.
 
@@ -32,16 +22,15 @@ Installation
 
 Install the released version::
 
-    pip install https://gitlab.nbs.sk/ofi/identifier-tools/-/archive/v2.5/identifier-tools-v2.5.zip --trusted-host gitlab.nbs.sk
-
-Alternatively you can install the package latest development version from the git repository::
-
-    pip install https://gitlab.nbs.sk/ofi/identifier-tools/-/archive/master/identifier-tools-master.zip --trusted-host gitlab.nbs.sk
+    pip install identifier-tools
 
 Development
 -----------
 
 **We look forward to any kind of improvements and support for new identifiers.**
+
+If you do add support for any identifiet, checksum, etc. please add a link to the specific documentation that was
+used for implementation, so we can reference to it.
 
 Clone a repository locally and make sure you work in your own branch and once you are happy with the functionality
 create pull request. All new code should be covered with tests. We try to use test driven development for the project.
