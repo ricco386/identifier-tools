@@ -1,21 +1,35 @@
-# Release 2.5
+# Release v2.6
 
-* RS-820 Updated regex to match list of national identifiers v2.9
+* Added HU_KOZ_CD manual verification link
+* Update of the annexes to the AnaCredit Manual - valid from 2022-09
+    * Added new identifiers:
+        -- AR_CUIT_CD, AU_ACN_CD, AU_ABN_CD, BS_NBR_CD, GG_RN_CD, BY_NBR_CD, BZ_TIN_CD, BM_RN_CD, BA_MBS_CD, BA_JIB_CD,
+        -- BA_PIB_CD, CA_REG_ID_CD, CL_RUT_CD, CO_NIT_CD, EC_RUC_CD, ID_NPWP_CD, IM_RN_CD, IM_TAX_CD, IL_TAX_CD,
+        -- JE_TAX_CD, LI_FL_CD, MY_CRN_CD, NC_NBR_CD, PA_RUC_CD, PE_RUC_CD, RS_PIB_CD, RS_MB_CD, SM_COE_CD, SG_ROB_CD,
+        -- KR_TIN_CD, TW_TAX_CD, TH_NBR_CD, AE_BL_CD, UY_RUT_CD
+    * Changed Regex:
+        -- CH_ID_CD from (CH)\d{11} to (CH)\-\d{3}\-\d{7}-\d{1} INCOMPATIBLE CHANGE!
+* Updated link for PL_NIP_CD
+* Updated tests and added new test (almost) each regex has to have rank and vise versa.
+* Several lists sorted alphabetically
+
+# Release v2.5
+
+* Updated regex to match list of national identifiers v2.9
     * new identifier IE_VAT_CD with RegEx and rank
     * update rank for IE_NOTAP_CD
     * update RegEx for JP_CN_CD
     * update RegEx for US_DSFN_CD
 
-# Release 2.4.3
+# Release v2.4.3
 
 * GR_AFM_CD link added
 
-# Release 2.4.2
+# Release v2.4.2
 
-* RS-550 - priority of identifiers for registration to riad
-* RS-781 fix of broken branch in purpose of preservation of history
+* Added priority of identifiers
+* Fix of broken branch in purpose of preservation of history
 
-# Release 2.4.1
+# Release v2.4.1
 
-* RS-766 Validácia na Xjustiz-ID code v DE identifikátoroch
-* Gitlab CI improvments
+* Validation of Xjustiz-ID code in DE identifiers
