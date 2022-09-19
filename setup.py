@@ -29,7 +29,7 @@ def read_file(name):
 setup(
     name="identifier-tools",
     version=VERSION,
-    description="Library that help working with different identifier types.",
+    description="Library that helps working with different identifier types.",
     long_description=read_file("README.rst"),
     author="Richard Kellner",
     author_email="richard.kellner@nbs.sk",
