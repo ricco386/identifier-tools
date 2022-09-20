@@ -150,7 +150,7 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "SG_ROB_CD": (
         "https://www.tis.bizfile.gov.sg/ngbtisinternet/faces/oracle/webcenter/portalapp/pages/TransactionMain.jspx?sele"
         "ctedETransId=dirSearch",
-        "https://www.rikvin.com/tools/singapore-company-name-check/"
+        "https://www.rikvin.com/tools/singapore-company-name-check/",
     ),
     "SI_DAV_CD": "http://www.ajpes.si/prs/default.asp",
     "SI_DDV_CD": "http://www.ajpes.si/prs/default.asp",
@@ -161,7 +161,7 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "SM_COE_CD": "https://registroimprese.cc.sm/",
     "TH_NBR_CD": (
         "https://thailandenterprise.com/enterprise/thai-pat-fin-co-ltd.383331383337.html",
-        "https://www.dataforthai.com/company/0205555006690/"
+        "https://www.dataforthai.com/company/0205555006690/",
     ),
     "TR_VKN_CD": "https://www.nvi.gov.tr/",
     "TW_TAX_CD": "https://gcis.nat.gov.tw/mainNew/English/subclassEnAction.do?method=getFile&pk=103",
