@@ -287,6 +287,7 @@ def test_verify_identifier_formats():
 
 def test_invalid_identifier_formats():
     # Edge cases in regex which shouldnt pass
+    assert verify_identifier_format(identifier="000184098", identifier_type="RS_PIB_CD") is False
     assert verify_identifier_format(identifier="31364501a", identifier_type="SK_ICO_CD") is False
     assert verify_identifier_format(identifier="551521-5795", identifier_type="SE_ORG_CD") is False
     assert verify_identifier_format(identifier="5505215795", identifier_type="SE_ORG_CD") is False

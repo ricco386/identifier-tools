@@ -304,7 +304,7 @@ ECB_NATIONAL_IDENTIFIERS = {
     "RO_TAX_CD": "^RO[0-9]{1,10}$",
     "RO_TRN_CD": "^J[0-9]{2}/[0-9]{1,9}/[12][0-9]{3}$",
     "RS_MB_CD": "^[0-9]{8}$",
-    "RS_PIB_CD": "^[0-9]{9}$",
+    "RS_PIB_CD": "^[1-9][0-9]{8}$",
     "RU_INN_CD": "^[0-9]{10}$",
     "RU_OGRN_CD": "^[0-9]{13}$",
     "SE_FIN_CD": "^[0-9]{5}$",
@@ -533,7 +533,7 @@ COUNTRY_IDENTIFIER_RANK = {
     ),
     "RS": (
         (1, "RS_MB_CD"),
-        (2, "RS_PIB_CD"),
+        (1, "RS_PIB_CD"),
     ),
     "RU": (
         (1, "RU_INN_CD"),
