@@ -8,10 +8,12 @@ Identifier format checking is based on European Central Bank - `List of national
 <https://www.ecb.europa.eu/stats/money/aggregates/anacredit/shared/pdf/List_of_national_identifiers.xlsx>`_ spreadsheet.
 
 Identifier format is extended by identifiers issued by Národná banka Slovenska - `Národné voľby a špecifiká v projekte
-AnaCredit <https://www.nbs.sk/sk/dohlad-nad-financnym-trhom-prakticke-informacie/zoznamy-subjektov-registre-a-formulare/registre/register-bankovych-uverov-a-zaruk-rbuz/projekt-anacredit>`_.
+AnaCredit
+<https://nbs.sk/dohlad-nad-financnym-trhom/registre/register-bankovych-uverov-a-zaruk-rbuz/projekt-anacredit/>`_.
 
-Curentlly supported identifiers for checksum calculation: IČO, IČO NI, LEI, NIČ, all available identifiers and their
-format is listed in file `identifier_tools/formats.py <identifier_tools/formats.py>`_.
+Currently supported identifiers for checksum calculation: IČO, IČO NI, LEI, NIČ, all available identifiers and their
+format is listed in file `identifier_tools/formats_constants.py
+<https://github.com/ricco386/identifier-tools/blob/main/identifier_tools/formats_constants.py#L193>`_.
 
 Identifier Tools library has support for ISO 7064 standard that is used to validate NIČ, LEI, IBAN among other things...
 Read more at wikipedia: https://en.wikipedia.org/wiki/ISO_7064
@@ -35,7 +37,8 @@ used for implementation, so we can reference to it.
 Clone a repository locally and make sure you work in your own branch and once you are happy with the functionality
 create pull request. All new code should be covered with tests. We try to use test driven development for the project.
 
-**If you find a bug feel free to create an issue with description**, how ever we appreciate even more if you create failing test.
+**If you find a bug feel free to create an issue with description**, how ever we appreciate even more if you create
+failing test.
 
 Release
 -------
