@@ -6,28 +6,19 @@ DEFAULT_REGEX = "[^+,]{1,50}$"
 ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "AE_BL_CD": "https://ner.economy.ae/Search_By_BL_No.aspx",
     "AR_CUIT_CD": "https://www.cuitonline.com/",
-    "AT_FB_CD": (
-        "https://www.firmenabc.at/",
-        "https://firmenbuch.at",
-    ),
+    "AT_FB_CD": ("https://www.firmenabc.at/", "https://firmenbuch.at"),
     "AT_GEM_CD": "http://www.statistik.at/web_de/klassifikationen/regionale_gliederungen/gemeinden/index.html",
     "AT_IDENT_CD": "https://www.usp.gv.at/Portal.Node/usp/public/content/laufender_betrieb/firmenbuch/firmenbuchabfrage"
     "/Seite.760006.html",
     "AT_LAE_CD": "http://www.iso.org/iso/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=63546",
     "AT_ZVR_CD": "http://zvr.bmi.gv.at/Start",
-    "AU_ABN_CD": (
-        "https://www.abr.gov.au/",
-        "https://abr.business.gov.au/Search/Advanced",
-        "https://abr.business.gov.au/Help/AbnFormat",
-    ),
+    "AU_ABN_CD": ("https://www.abr.gov.au/", "https://abr.business.gov.au/Search/Advanced"),
     "AU_ACN_CD": (
-        "https://asic.gov.au/",
         "https://asic.gov.au/online-services/search-asic-s-registers/",
-        "https://connectonline.asic.gov.au/RegistrySearch/faces/landing/SearchRegisters.jspx?_adf.ctrl-state=10yzwonlb0"
-        "_26",
+        "https://connectonline.asic.gov.au/RegistrySearch/faces/landing/SearchRegisters.jspx?_adf.ctrl-state=10yzwonlb0_26",
     ),
     "BA_JIB_CD": "https://bizreg.pravosudje.ba/pls/apex/f?p=186:20:1390340018544685::NO",
-    "BA_MBS_CD": "https://bizreg.pravosudje.ba/pls/apex/f?p=186:20:1390340018544685::NO",
+    "BA_MBS_CD": "https://search.bisnode.ba/",
     "BA_PIB_CD": "https://bizreg.pravosudje.ba/pls/apex/f?p=186:20:1390340018544685::NO",
     "BE_OND_CD": "http://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?lang=en",
     "BG_BULSTAT_CD": "http://reports.bulstat.bg:8081/bulstat-ireports/report.jsf?x_rpt=rpt1",
@@ -84,18 +75,14 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "DE_VR_CD": "https://www.handelsregister.de/rp_web/welcome.do",
     "DK_CVR_CD": "http://www.cvr.dk",
     "DK_FT_CD": "http://vut.finanstilsynet.dk/en/Tal-og-fakta/Virksomheder-under-tilsyn/VUT-database.aspx",
-    "EC_RUC_CD": (
-        "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/BusquedaProveedorCpc.cpe",
-        "https://www.sri.gob.ec/RUC",
-    ),
+    "EC_RUC_CD": "https://www.compraspublicas.gob.ec/ProcesoContratacion/compras/EP/BusquedaProveedorCpc.cpe",
     "EE_RG_CD": "https://ariregister.rik.ee/",
     "ES_NIF_CD": "http://www.infocif.es/",
     "FI_ALV_CD": "http://fi.vat-search.eu/",
     "FI_SIRA_CD": "http://www.suomenpankki.fi/en/tilastot/sijoitusrahastot/Pages/sijoitusrahastolista.aspx",
     "FI_Y_CD": "https://tietopalvelu.ytj.fi/yrityshaku.aspx?kielikoodi=3",
     "FR_CIB": "https://www.regafi.fr/spip.php?rubrique3",
-    "FR_IF_CD": "https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/index.en."
-    "html",
+    "FR_IF_CD": "https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/index.en.html",
     "FR_RNA_CD": "https://www.data.gouv.fr/fr/datasets/repertoire-national-des-associations-rna/",
     "FR_SIREN_CD": "https://www.sirene.fr/sirene/public/accueil",
     "GB_CRN_CD": "https://beta.companieshouse.gov.uk",
@@ -115,7 +102,7 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "HU_KOZ_CD": "https://www.e-cegjegyzek.hu/?cegkereses",
     "IE_CRO_CD": "https://search.cro.ie",
     "IE_GOV_CD": "https://www.centralbank.ie/statistics/statistical-reporting-requirements/anacredit-in-ireland",
-    "IL_TAX_CD": "https://ica.justice.gov.il/IcaSite/",
+    "IL_TAX_CD": ("https://ica.justice.gov.il/IcaSite/", "https://www.vatify.eu/israel-vat-number.html"),
     "IM_RN_CD": "https://services.gov.im/companies-registry",
     "IM_TAX_CD": "https://www.gov.im/categories/tax-vat-and-your-money/income-tax-and-national-insurance/personal-tax/"
     "reference-numbers/",
@@ -125,6 +112,7 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
         "http://www.nta.go.jp/foreign_language/corporate_number/",
         "https://www2.tse.or.jp/tseHpFront/JJK020010Action.do?Show=Show",
     ),
+    "KR_TIN_CD": "http://company.nett.kr/",
     "LI_FL_CD": "https://www.oera.li/cr-portal/suche/suche.xhtml",
     "LT_JAR_CD": "http://www.registrucentras.lt/jar/index_en.php",
     "LU_IF_CD": "https://supervisedentities.apps.cssf.lu/index.html?language=fr&type=OPC#Home",
@@ -138,11 +126,8 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "MC_NIS_CD": "http://www.imsee.mc/Demarches-et-Services/Repertoire-du-NIS",
     "MC_RCI_CD": "http://www.rci.gouv.mc/rc/",
     "MT_CNUM_CD": "https://registry.mbr.mt/ROC/index.jsp#companySearch.do?action=companyDetails",
-    "MX_RFC_CD": (
-        "https://www.gob.mx/busqueda",
-        "https://www.dateas.com/es/explore/empresas-mexicanas/",
-    ),
-    "MY_CRN_CD": "https://www.ssm.com.my/Pages/Quick_Link_backup/e-Search.aspx",
+    "MX_RFC_CD": ("https://www.gob.mx/busqueda", "https://www.dateas.com/es/explore/empresas-mexicanas/"),
+    "MY_CRN_CD": ("https://www.ssm.com.my/Pages/Quick_Link_backup/e-Search.aspx", "https://www.mysbusiness.com/"),
     "NL_KVK_CD": "http://www.kvk.nl",
     "NL_RSIN_CD": "http://www.kvk.nl",
     "NO_NBR_CD": "https://w2.brreg.no/enhet/sok/",
@@ -150,28 +135,22 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "PE_RUC_CD": "https://dgi.mef.gob.pa/Registro.php#:~:text=El%20Registro%20%C3%9Anico%20de%20Contribuyente,personas%"
     "20naturales%2C%20comunidades%2C%20sociedades%2C",
     "PL_KRS_CD": "https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu?t:lb=t",
-    "PL_NIP_CD": (
-        "https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu?t:lb=t",
-        "https://www.owg.pl/obf/wynik?pageSize=10",
-    ),
+    "PL_NIP_CD": ("https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu?t:lb=t", "https://www.owg.pl/obf/wynik?pageSize=10"),
     "PL_REGON_CD": "https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu?t:lb=t",
     "PL_VAT_CD": "https://ems.ms.gov.pl/krs/wyszukiwaniepodmiotu?t:lb=t",
     "PT_ASF_CD": "https://www.asf.com.pt",
     "PT_FSA_CD": "http://www.bportugal.pt",
     "PT_IF_CD": "https://www.cmvm.pt",
     "RO_TRN_CD": "https://www.listafirme.ro",
-    "RS_MB_CD": "https://pretraga2.apr.gov.rs/unifiedentitysearch",
-    "RS_PIB_CD": "https://pretraga2.apr.gov.rs/unifiedentitysearch",
-    "RU_INN_CD": (
-        "https://service.nalog.ru/inn.do",
-        "https://www.k-agent.ru/en",
-    ),
+    "RS_MB_CD": ("https://pretraga2.apr.gov.rs/unifiedentitysearch", "https://www.vatify.eu/serbia-vat-number.html"),
+    "RS_PIB_CD": ("https://pretraga2.apr.gov.rs/unifiedentitysearch", "http://www.companywall.rs/"),
+    "RU_INN_CD": ("https://service.nalog.ru/inn.do", "https://www.k-agent.ru/en"),
     "SE_FIN_CD": "http://www.fi.se/Folder-EN/Startpage/Register/Company-register/",
     "SE_ORG_CD": "http://www.bolagsverket.se/en/info/buy/e-services/company-information",
     "SG_ROB_CD": (
-        "https://www.bizfile.gov.sg/ngbbizfileinternet/faces/oracle/webcenter/portalapp/pages/BizfileHomepage.jspx",
         "https://www.tis.bizfile.gov.sg/ngbtisinternet/faces/oracle/webcenter/portalapp/pages/TransactionMain.jspx?sele"
         "ctedETransId=dirSearch",
+        "https://www.rikvin.com/tools/singapore-company-name-check/"
     ),
     "SI_DAV_CD": "http://www.ajpes.si/prs/default.asp",
     "SI_DDV_CD": "http://www.ajpes.si/prs/default.asp",
@@ -180,6 +159,10 @@ ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "SK_IF_CD": "https://www.nbs.sk/en/statistics/financial-institutions/money-market-funds-and-investment-funds/list-"
     "of-investment-funds",
     "SM_COE_CD": "https://registroimprese.cc.sm/",
+    "TH_NBR_CD": (
+        "https://thailandenterprise.com/enterprise/thai-pat-fin-co-ltd.383331383337.html",
+        "https://www.dataforthai.com/company/0205555006690/"
+    ),
     "TR_VKN_CD": "https://www.nvi.gov.tr/",
     "TW_TAX_CD": "https://gcis.nat.gov.tw/mainNew/English/subclassEnAction.do?method=getFile&pk=103",
     "US_EIN_CD": (
