@@ -75,4 +75,5 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
-          pytest --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html --cov-report term
+          pytest --doctest-modules --junitxml=junit/test-results.xml --cov=identifier_tools --cov-report=xml --cov-report=html --cov-report term
+          coverage junit/test-results.xml
