@@ -532,8 +532,8 @@ COUNTRY_IDENTIFIER_RANK = {
         (3, "RO_TRN_CD"),
     ),
     "RS": (
-        (1, "RS_MB_CD"),
         (1, "RS_PIB_CD"),
+        (2, "RS_MB_CD"),
     ),
     "RU": (
         (1, "RU_INN_CD"),
