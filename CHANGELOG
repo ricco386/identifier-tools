@@ -1,3 +1,10 @@
+# Release v2.6.1
+
+* Fixed wrong regex for RS_PIB_CD
+* Fixed RS_PIB_CD and RS_MB_CD rank
+* Updated links for online identifier verification
+* Added Compute Maintainability Index and Compute Cyclomatic Complexity to CI/CD pipeline
+
 # Release v2.6
 
 * Added HU_KOZ_CD manual verification link
