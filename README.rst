@@ -33,22 +33,20 @@ Basic usage is to verify if the identifier has correct format. There is a few he
 country of the identifier or list all available identifiers in a particular country. Some countries has multiple
 identifiers with different priority, you can get the identifier rank as well.
 
-```python
->>> from identifier_tools.formats import (
-...     verify_identifier_format,
-...     verify_national_identifier_country,
-...     get_country_identifiers,
-...     get_identifier_rank,
-... )
->>> verify_identifier_format(identifier_type="GEN_VAT_CD", identifier="1111")
-True
->>> verify_national_identifier_country(country_code="SK", national_id_type="SK_ICO_CD")
-True
->>> get_country_identifiers("DE")
-[(1, 'DE_TRD_RGSTR_CD'), (2, 'DE_VAT_CD'), (3, 'DE_TAX_CD'), (4, 'DE_NOTAP_CD')]
->>> get_identifier_rank("DE_TAX_CD")
-3
-```
+    >>> from identifier_tools.formats import (
+    ...     verify_identifier_format,
+    ...     verify_national_identifier_country,
+    ...     get_country_identifiers,
+    ...     get_identifier_rank,
+    ... )
+    >>> verify_identifier_format(identifier_type="GEN_VAT_CD", identifier="1111")
+    True
+    >>> verify_national_identifier_country(country_code="SK", national_id_type="SK_ICO_CD")
+    True
+    >>> get_country_identifiers("DE")
+    [(1, 'DE_TRD_RGSTR_CD'), (2, 'DE_VAT_CD'), (3, 'DE_TAX_CD'), (4, 'DE_NOTAP_CD')]
+    >>> get_identifier_rank("DE_TAX_CD")
+    3
 
 Development
 -----------
