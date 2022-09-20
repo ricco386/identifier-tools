@@ -3,7 +3,7 @@ name: Python Package
 on:
   push:
     branches:
-      - *
+      - '*'
   pull_request:
     branches:
       - main
@@ -34,11 +34,11 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }} 🐍
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.10"
       - name: Install dependencies 📦
         run: |
           python -m pip install --upgrade pip
-          pip install flake8 black
+          pip install flake8 black radon
       - name: Lint with flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
@@ -47,7 +47,13 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Lint with Black
         run: |
-          black --target-version py38 --line-length 127 --diff --check .
+          black --target-version py310 --line-length 127 --diff --check .
+      - name: Compute Maintainability Index
+        run: |
+            radon mi identifier_tools -i tests
+      - name: Compute Cyclomatic Complexity
+        run: |
+            radon cc identifier_tools -a -i tests
 
   test:
 
