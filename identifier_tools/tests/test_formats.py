@@ -68,6 +68,7 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier_type="BA_MBS_CD", identifier="1-24548") is True
     assert verify_identifier_format(identifier_type="BA_MBS_CD", identifier="64-01-0012-10") is True
     assert verify_identifier_format(identifier_type="BA_PIB_CD", identifier="236031950005") is True
+    assert verify_identifier_format(identifier_type="BE_OND_CD", identifier="1203201340") is True
     assert verify_identifier_format(identifier_type="BE_OND_CD", identifier="0203201340") is True
     assert verify_identifier_format(identifier_type="BG_BULSTAT_CD", identifier="999999999") is True
     assert verify_identifier_format(identifier_type="BG_BULSTAT_CD", identifier="9999999999") is True
@@ -225,11 +226,17 @@ def test_verify_identifier_formats():
     assert verify_identifier_format(identifier_type="MY_CRN_CD", identifier="175932-M") is True
     assert verify_identifier_format(identifier_type="MY_CRN_CD", identifier="540781-U") is True
     assert verify_identifier_format(identifier_type="MY_CRN_CD", identifier="838820-A") is True
-    assert verify_identifier_format(identifier_type="NC_NBR_CD", identifier="2000133058") is True
+    assert verify_identifier_format(identifier_type="NC_NBR_CD", identifier="1000439") is True
     assert verify_identifier_format(identifier_type="NL_KVK_CD", identifier="12345678") is True
     assert verify_identifier_format(identifier_type="NL_RSIN_CD", identifier="123456789") is True
     assert verify_identifier_format(identifier_type="NO_NBR_CD", identifier="987654321") is True
     assert verify_identifier_format(identifier_type="PA_RUC_CD", identifier="155646287") is True
+    assert verify_identifier_format(identifier_type="PA_RUC_CD", identifier="0000025752-00") is True
+    assert verify_identifier_format(identifier_type="PA_RUC_CD", identifier="9-98-420-25") is True
+    assert verify_identifier_format(identifier_type="PA_RUC_CD", identifier="07--0091-0097") is True
+    assert verify_identifier_format(identifier_type="PA_RUC_CD", identifier="380693-1-421669-07") is True
+    assert verify_identifier_format(identifier_type="PA_RUC_CD", identifier="59-1921450") is True
+    assert verify_identifier_format(identifier_type="PA_RUC_CD", identifier="1410685-1-629823-55") is True
     assert verify_identifier_format(identifier_type="PE_RUC_CD", identifier="20100152941") is True
     assert verify_identifier_format(identifier_type="PL_KRS_CD", identifier="56228") is True
     assert verify_identifier_format(identifier_type="PL_NIP_CD", identifier="7740001454") is True
