@@ -1,3 +1,9 @@
+# Release v2.6.2
+
+* RegEx change: BE_OND_CD (Belgium), NC_NBR_CD (New Caledonia), PA_RUC_CD (Panama)
+* Added link to register: NC_NBR_CD (New Caledonia)
+* Minor naming change in CI/CD pipeline
+
 # Release v2.6.1
 
 * Fixed wrong regex for RS_PIB_CD
