@@ -1,4 +1,4 @@
-from identifier_tools.mappers import territory_to_parent_mapper
+from identifier_tools.mappers import territory_to_parent_mapper, get_verification_register
 
 
 def test_territory_to_parent_mapper():
@@ -16,3 +16,11 @@ def test_territory_to_parent_mapper():
     assert territory_to_parent_mapper("EH") == "MA"
     assert territory_to_parent_mapper("SJ") == "NO"
     assert territory_to_parent_mapper("PR") == "US"
+
+
+def test_get_verification_register():
+    assert get_verification_register("DK_CVR_CD") == "http://www.cvr.dk"
+    assert get_verification_register("US_EIN_CD") == (
+        "https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers-eins",
+        "https://eintaxid.com/",
+    )

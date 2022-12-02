@@ -1,8 +1,10 @@
 Identifier Tools
 ################
 
-Library that helps working with different subject identifier types. Purpose of this library is to validate string
-if it matches the identifier format and if possible calculate checksum if it is correct for identifier.
+Library that helps working with different entity (legal person, entrepreneur, subject, etc.) identifier types.
+
+Purpose of this library is to validate string if it matches the identifier format and if possible calculate checksum
+if it is correct for identifier.
 
 Identifier format checking is based on European Central Bank - `List of national identifiers
 <https://www.ecb.europa.eu/stats/money/aggregates/anacredit/shared/pdf/List_of_national_identifiers.xlsx>`_ spreadsheet.
@@ -29,24 +31,41 @@ Install the released version::
 Usage
 -----
 
-Basic usage is to verify if the identifier has correct format. There is a few helpful functions that can return
-country of the identifier or list all available identifiers in a particular country. Some countries has multiple
-identifiers with different priority, you can get the identifier rank as well.
+Basic usage is to verify if the identifier has correct format, or if the identifier can be used in particular country:
 
-    >>> from identifier_tools.formats import (
-    ...     verify_identifier_format,
-    ...     verify_national_identifier_country,
-    ...     get_country_identifiers,
-    ...     get_identifier_rank,
-    ... )
+    >>> from identifier_tools.formats import verify_identifier_format, verify_national_identifier_country
     >>> verify_identifier_format(identifier_type="GEN_VAT_CD", identifier="1111")
     True
     >>> verify_national_identifier_country(country_code="SK", national_id_type="SK_ICO_CD")
     True
+
+You can list all available identifiers in a particular country. Some countries has multiple identifiers with
+different priority, you can get the identifier rank as well:
+
+    >>> from identifier_tools.formats import get_country_identifiers, get_identifier_rank
     >>> get_country_identifiers("DE")
     [(1, 'DE_TRD_RGSTR_CD'), (2, 'DE_VAT_CD'), (3, 'DE_TAX_CD'), (4, 'DE_NOTAP_CD')]
     >>> get_identifier_rank("DE_TAX_CD")
     3
+
+Library provide a map of territories, so you can easily find out to which country they belong. If the country code
+is not in the map, original country code is returned. For example Martinique (ISO2 country code: MQ) is overseas
+department of France in the Caribbean:
+
+    >>> from identifier_tools.mappers import territory_to_parent_mapper
+    >>> territory_to_parent_mapper('MQ')
+    'FR'
+    >>> territory_to_parent_mapper('FR')
+    'FR'
+
+If you want to manually verify the identifier, it is possible to find a link provided by ECB:
+
+    >>> from identifier_tools.mappers import get_verification_register
+    >>> get_verification_register('SK_ICO_CD')
+    'https://rpo.statistics.sk/rpo'
+    >>> get_verification_register('US_EIN_CD')
+    ('https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers-eins', 'https://eintaxid.com/')
+
 
 Development
 -----------
