@@ -1,4 +1,4 @@
-from formats_constants import ECB_NATIONAL_IDENTIFIERS_REGISTERS
+from .formats_constants import ECB_NATIONAL_IDENTIFIERS_REGISTERS
 
 # List of territory to parent country mappings
 TERRITORY_COUNTRY_MAP = {
