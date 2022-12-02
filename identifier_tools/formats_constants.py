@@ -6,7 +6,7 @@ DEFAULT_REGEX = "[^+,]{1,50}$"
 ECB_NATIONAL_IDENTIFIERS_REGISTERS = {
     "AE_BL_CD": "https://ner.economy.ae/Search_By_BL_No.aspx",
     "AR_CUIT_CD": "https://www.cuitonline.com/",
-    "AT_FB_CD": ("https://www.firmenabc.at/", "https://firmenbuch.at"),
+    "AT_FB_CD": ("https://www.firmenabc.at/", "https://justizonline.gv.at/jop/web/firmenbuchabfrage"),
     "AT_GEM_CD": "http://www.statistik.at/web_de/klassifikationen/regionale_gliederungen/gemeinden/index.html",
     "AT_IDENT_CD": "https://www.usp.gv.at/Portal.Node/usp/public/content/laufender_betrieb/firmenbuch/firmenbuchabfrage"
     "/Seite.760006.html",
