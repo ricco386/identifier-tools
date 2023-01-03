@@ -36,7 +36,7 @@ setup(
     license="MIT",
     url="https://github.com/ricco386/identifier-tools",
     packages=find_packages(),
-    setup_requires=["pytest-runner"],
+    setup_requires=["postal-codes-tools>1.1.0", "pytest-runner"],
     tests_require=["pytest"],
     include_package_data=True,
 )

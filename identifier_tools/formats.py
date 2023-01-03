@@ -3,7 +3,7 @@ import re
 from operator import itemgetter
 
 from . import formats_constants as constants
-from .mappers import territory_to_parent_mapper
+from postal_codes_tools.mappers import territory_to_parent_mapper
 
 BIC_RANK = 33
 OTHER_IDENTIFIERS_RANK = 35
