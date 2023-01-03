@@ -48,16 +48,6 @@ different priority, you can get the identifier rank as well:
     >>> get_identifier_rank("DE_TAX_CD")
     3
 
-Library provide a map of territories, so you can easily find out to which country they belong. If the country code
-is not in the map, original country code is returned. For example Martinique (ISO2 country code: MQ) is overseas
-department of France in the Caribbean:
-
-    >>> from identifier_tools.mappers import territory_to_parent_mapper
-    >>> territory_to_parent_mapper('MQ')
-    'FR'
-    >>> territory_to_parent_mapper('FR')
-    'FR'
-
 If you want to manually verify the identifier, it is possible to find a link provided by ECB:
 
     >>> from identifier_tools.mappers import get_verification_register

@@ -1,3 +1,8 @@
+# Release v2.7.0
+
+* Removed duplicate code from postal-codes-tools
+* Added postal-codes-tools > 1.1.0 as requirement to identifier-tools
+
 # Release v2.6.3
 
 * Updated documentation
